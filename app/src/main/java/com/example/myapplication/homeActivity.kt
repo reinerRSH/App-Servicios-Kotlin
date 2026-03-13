@@ -53,6 +53,7 @@ class homeActivity : AppCompatActivity() {
 
 
 
+        // lista de Rv recomendados pendiente por mejorar
         val listaRecomendados = listOf(
             recomendado(1,"Juan M.",R.drawable.ic_launcher_foreground,"4.5","Plomeria","200$/hs",R.drawable.ic_launcher_foreground),
             recomendado(2,"Juan M.",R.drawable.ic_launcher_foreground,"4.5","Plomeria","200$/hs",R.drawable.ic_launcher_foreground),
