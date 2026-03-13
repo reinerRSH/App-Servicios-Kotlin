@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_imageProfile_popular"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:src="@android:drawable/ic_menu_edit"
+             />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/id_recomendado_tarjeta"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Nombre Apellido"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@android:drawable/btn_star_big_on"
+                app:tint="#FFC107" />
+
+            <TextView
+                android:id="@+id/tv_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="4.5"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/profesion_perfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cleaning Service"
+            android:textSize="12sp"
+            android:textColor="#757575"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/id_precio_hora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="$20.00/hr"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <ImageView
+                android:id="@+id/iv_contratar"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/icon_circle"
+                android:backgroundTint="#8BC34A"
+                android:padding="8dp"
+                android:src="@android:drawable/ic_input_add"
+                app:tint="@color/white" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

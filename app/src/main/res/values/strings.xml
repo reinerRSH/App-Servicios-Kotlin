@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Servi Go</string>
+
+
+    //LogIn button
+    <string name="Log_inButton">Log In</string>
+    <string name="cb_registro">¿No tienes una cuenta? Regístrate"</string>
+    <string name="button_text">Record"</string>
+    //----------
+
+    <string name="mensaje">Conecta tu talento"</string>
+
+
+    //texto home
+    <string name="welcome">Bienvenido</string>
+    <string name="pay">pay</string>
+
+</resources>
