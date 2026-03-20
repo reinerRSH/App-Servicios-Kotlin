@@ -1,13 +1,23 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+
+    id("com.google.gms.google-services") //firestor -firebase
+
 }
 
 android {
     namespace = "com.example.myapplication"
     compileSdk {
         version = release(36)
+
+
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
 
     defaultConfig {
         applicationId = "com.example.myapplication"
@@ -46,4 +56,11 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+
+    // Importa el BoM de Firebase (gestiona las versiones por ti)
+    implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
+
+    // Librería para usar Firestore
+    implementation("com.google.firebase:firebase-firestore-ktx")
 }

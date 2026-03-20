@@ -1,6 +1,6 @@
 package com.example.myapplication
 
-import Data.dataUsuario
+import com.example.myapplication.model.dataUsuario
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
@@ -9,26 +9,33 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.myapplication.databinding.ActivityMainBinding
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputLayout
 import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
 
-    //base de datos provisional de usuarios
+    private lateinit var binding : ActivityMainBinding
 
 
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        val view = binding.root
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(view)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+
+
 
         logInConfig()
     }

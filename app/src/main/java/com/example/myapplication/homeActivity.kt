@@ -13,6 +13,8 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.Firebase
+import com.google.firebase.firestore.firestore
 
 class homeActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -26,49 +28,115 @@ class homeActivity : AppCompatActivity() {
             insets
         }
 
-        RecyclerViewService ()
+        val db = Firebase.firestore
+
+        val docRef = db.collection("usuarios").document("OmCoK3n98DPDR6AtQhw8")
+        docRef.get()
+
+
+
+
+        RecyclerViewService()
         RecycleViewRecomendados()
+
 
     }
 
-
-    fun RecyclerViewService (){
+    fun RecyclerViewService() {
         val rv_populars_service = findViewById<RecyclerView>(R.id.rv_populars_service)
 
         val listaDeServicios = listOf(
-            Servicio(1,"Limpieza",R.drawable.limpiesza),
-            Servicio(2,"Reparaciones", R.drawable.reparar),
-            Servicio(3,"Electricidad",R.drawable.electricidad),
-            Servicio(4,"Carpinteria",R.drawable.carpinteria)
+            Servicio(1, "Limpieza", R.drawable.limpiesza),
+            Servicio(2, "Reparaciones", R.drawable.reparar),
+            Servicio(3, "Electricidad", R.drawable.electricidad),
+            Servicio(4, "Carpinteria", R.drawable.carpinteria)
 
-)
+        )
 
-        rv_populars_service.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false)
+        rv_populars_service.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         rv_populars_service.adapter = ServicioAdapter(listaDeServicios)
 
     }
 
-    fun RecycleViewRecomendados(){
+    fun RecycleViewRecomendados() {
         val rv_recomendados = findViewById<RecyclerView>(R.id.rv_recomendados)
-
 
 
         // lista de Rv recomendados pendiente por mejorar
         val listaRecomendados = listOf(
-            recomendado(1,"Juan M.",R.drawable.ic_launcher_foreground,"4.5","Plomeria","200$/hs",R.drawable.ic_launcher_foreground),
-            recomendado(2,"Juan M.",R.drawable.ic_launcher_foreground,"4.5","Plomeria","200$/hs",R.drawable.ic_launcher_foreground),
-            recomendado(3,"Juan M.",R.drawable.ic_launcher_foreground,"4.5","Plomeria","200$/hs",R.drawable.ic_launcher_foreground),
-            recomendado(4,"Juan M.",R.drawable.ic_launcher_foreground,"4.5","Plomeria","200$/hs",R.drawable.ic_launcher_foreground),
-            recomendado(5,"Juan M.",R.drawable.ic_launcher_foreground,"4.5","Plomeria","200$/hs",R.drawable.ic_launcher_foreground),
-            recomendado(6,"Juan M.",R.drawable.ic_launcher_foreground,"4.5","Plomeria","200$/hs",R.drawable.ic_launcher_foreground),
-            recomendado(7,"Juan M.",R.drawable.ic_launcher_foreground,"4.5","Plomeria","200$/hs",R.drawable.ic_launcher_foreground))
+            recomendado(
+                1,
+                "Juan M.",
+                R.drawable.ic_launcher_foreground,
+                "4.5",
+                "Plomeria",
+                "200$/hs",
+                R.drawable.ic_launcher_foreground
+            ),
+            recomendado(
+                2,
+                "Juan M.",
+                R.drawable.ic_launcher_foreground,
+                "4.5",
+                "Plomeria",
+                "200$/hs",
+                R.drawable.ic_launcher_foreground
+            ),
+            recomendado(
+                3,
+                "Juan M.",
+                R.drawable.ic_launcher_foreground,
+                "4.5",
+                "Plomeria",
+                "200$/hs",
+                R.drawable.ic_launcher_foreground
+            ),
+            recomendado(
+                4,
+                "Juan M.",
+                R.drawable.ic_launcher_foreground,
+                "4.5",
+                "Plomeria",
+                "200$/hs",
+                R.drawable.ic_launcher_foreground
+            ),
+            recomendado(
+                5,
+                "Juan M.",
+                R.drawable.ic_launcher_foreground,
+                "4.5",
+                "Plomeria",
+                "200$/hs",
+                R.drawable.ic_launcher_foreground
+            ),
+            recomendado(
+                6,
+                "Juan M.",
+                R.drawable.ic_launcher_foreground,
+                "4.5",
+                "Plomeria",
+                "200$/hs",
+                R.drawable.ic_launcher_foreground
+            ),
+            recomendado(
+                7,
+                "Juan M.",
+                R.drawable.ic_launcher_foreground,
+                "4.5",
+                "Plomeria",
+                "200$/hs",
+                R.drawable.ic_launcher_foreground
+            )
+        )
 
         val mLayoutManager = GridLayoutManager(this, 2)
         rv_recomendados.layoutManager = mLayoutManager
 
-            rv_recomendados.adapter = recomendadoAdapter(listaRecomendados)
+        rv_recomendados.adapter = recomendadoAdapter(listaRecomendados)
 
     }
 
 
 }
+
